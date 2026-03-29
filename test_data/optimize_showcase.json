@@ -1,0 +1,56 @@
+{
+  "config": {
+    "optimize": {
+      "max_iters": 300,
+      "random_seed": 42,
+      "verify_every": 20,
+      "enable_verify": true
+    }
+  },
+  "buildings": [
+    {
+      "id": 1,
+      "rooms": [
+        { "id": 101, "capacity": 50 }
+      ]
+    },
+    {
+      "id": 2,
+      "rooms": [
+        { "id": 201, "capacity": 100 }
+      ]
+    }
+  ],
+  "courses": [
+    { "id": 1, "stu_num": 40, "time_slot": 0 },
+    { "id": 2, "stu_num": 40, "time_slot": 0 },
+    { "id": 3, "stu_num": 40, "time_slot": 1 },
+    { "id": 4, "stu_num": 80, "time_slot": 1 }
+  ],
+  "student_groups": [
+    {
+      "weight": 30,
+      "dorm_id": 10,
+      "schedule": [
+        { "time_slot": 0, "course_id": 1 },
+        { "time_slot": 1, "course_id": 4 }
+      ]
+    },
+    {
+      "weight": 30,
+      "dorm_id": 20,
+      "schedule": [
+        { "time_slot": 0, "course_id": 2 },
+        { "time_slot": 1, "course_id": 3 }
+      ]
+    }
+  ],
+  "dist_building": {
+    "1": { "1": 0.0, "2": 20.0 },
+    "2": { "1": 20.0, "2": 0.0 }
+  },
+  "dist_dorm": {
+    "10": { "1": 1.0, "2": 6.0 },
+    "20": { "1": 6.0, "2": 1.0 }
+  }
+}

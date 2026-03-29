@@ -1,0 +1,50 @@
+{
+  "config": {
+    "alpha": 0.8,
+    "greedy_group_coverage_ratio": 0.75,
+    "greedy_group_limit": 8,
+    "greedy_prev_weight": 0.7,
+    "greedy_next_lambda": 0.3,
+    "greedy_distance_weight": 1.0,
+    "greedy_waste_weight": 0.15,
+    "greedy_rarity_weight": 0.3,
+    "greedy_congestion_weight": 0.05,
+    "greedy_max_candidates": 6,
+    "greedy_source_expand": 3
+  },
+  "buildings": [
+    {
+      "id": 1,
+      "rooms": [
+        { "id": 101, "capacity": 50 }
+      ]
+    },
+    {
+      "id": 2,
+      "rooms": [
+        { "id": 201, "capacity": 100 }
+      ]
+    }
+  ],
+  "courses": [
+    { "id": 1, "stu_num": 45, "time_slot": 0 },
+    { "id": 2, "stu_num": 80, "time_slot": 1 }
+  ],
+  "student_groups": [
+    {
+      "weight": 30,
+      "dorm_id": 10,
+      "schedule": [
+        { "time_slot": 0, "course_id": 1 },
+        { "time_slot": 1, "course_id": 2 }
+      ]
+    }
+  ],
+  "dist_building": {
+    "1": { "1": 0.0, "2": 4.0 },
+    "2": { "1": 4.0, "2": 0.0 }
+  },
+  "dist_dorm": {
+    "10": { "1": 2.0, "2": 6.0 }
+  }
+}

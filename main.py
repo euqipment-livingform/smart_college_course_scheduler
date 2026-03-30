@@ -274,9 +274,14 @@ def main() -> int:
         for key, value in report_dict["stats"].items():
             print(f"stats.{key}: {value}")
 
-    print("\n=== 课程-教室分配 ===")
+    print("\n=== 课程-教学楼-教室分配 ===")
     for course_id in sorted(assignment_map):
-        print(f"course {course_id} -> room {assignment_map[course_id]}")
+        room_id = assignment_map[course_id]
+        if room_id is None:
+            print(f"course {course_id} -> unassigned")
+            continue
+        building_id = scheduler.room_map[room_id].building_id
+        print(f"course {course_id} -> building {building_id}, room {room_id}")
 
     return 0
 
